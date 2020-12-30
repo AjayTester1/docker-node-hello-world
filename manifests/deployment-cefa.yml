@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aatiwarishubaks-cefa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aatiwarishubaks-cefa"
+  template:
+    metadata:
+      labels:
+        app: "aatiwarishubaks-cefa"
+    spec:
+      containers:
+        - name: "aatiwarishubaks-cefa"
+          image: "l5aks.azurecr.io/aatiwarishubakscefa"
+          ports:
+          - containerPort: 4000
